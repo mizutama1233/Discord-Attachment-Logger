@@ -40,9 +40,13 @@ async def stop(ctx):
   except KeyError:
     await ctx.send("Already deleted or does not exist")
 
-TOKEN = os.getenv("TOKEN")
-try:
-  web.run()
-  bot.run(TOKEN)
-except Exception:
-  os.system("kill 1")
+TOKEN = "Your token"
+bot.run(TOKEN)
+
+#-------for replit--------
+# TOKEN = os.getenv("TOKEN")
+# try:
+#   web.run()
+#   bot.run(TOKEN)
+# except Exception:
+#   os.system("kill 1")
