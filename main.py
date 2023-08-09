@@ -1,5 +1,5 @@
 # https://github.com/mizutama1233
-import disnake, web, os
+import disnake
 from disnake.ext import commands
 
 command_sync_flags = commands.CommandSyncFlags.default()
@@ -7,9 +7,7 @@ command_sync_flags.sync_commands_debug = True
 intents = disnake.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or("[-]"),
-                   command_sync_flags=command_sync_flags,
-                   intents=intents)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or("[-]"), command_sync_flags=command_sync_flags, intents=intents)
 
 tasks = {}
 
@@ -42,11 +40,3 @@ async def stop(ctx):
 
 TOKEN = "Your token"
 bot.run(TOKEN)
-
-#-------for replit--------
-# TOKEN = os.getenv("TOKEN")
-# try:
-#   web.run()
-#   bot.run(TOKEN)
-# except Exception:
-#   os.system("kill 1")
